@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+        <defName>WindSlash_III</defName>
+        <label>Wind Slash III</label>
+        <description>Fires 3 slashes of homing wind projectiles at a target.</description>
+        <iconPath>Abilities/WindMage/wind_slash_3</iconPath>
+        <abilityClass>RGBT.EtherealAbility.Ability_ShootBurstProjectile</abilityClass>
+        <castTime>45</castTime>
+        <range>24.9</range>
+		<power>1.5</power>
+		<powerStatFactors>
+			<PsychicSensitivity>1.25</PsychicSensitivity>
+		</powerStatFactors>
+        <targetMode>Pawn</targetMode>
+		<targetingParameters>
+			<canTargetPawns>true</canTargetPawns>
+			<canTargetBuildings>true</canTargetBuildings>
+		</targetingParameters>
+        <castSound>ThumpCannon_Fire</castSound>
+        <modExtensions>
+            <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+                <path>RGB_Wind_Mage_Psycast</path>
+                <level>4</level>
+                <order>1</order>
+                <psyfocusCost>0.035</psyfocusCost>
+                <entropyGain>20</entropyGain>
+				<prerequisites>
+					<li>WindSlash_II</li>
+				</prerequisites>
+            </li>
+            <li Class="RGBT.EtherealAbility.AbilityExtension_BurstProjectile">
+                <projectiles>
+					<li>Bullet_WindSlash_III</li>
+					<li>Bullet_WindSlash_III</li>
+					<li>Bullet_WindSlash_III</li>
+				</projectiles>
+            </li>
+        </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+</Defs>

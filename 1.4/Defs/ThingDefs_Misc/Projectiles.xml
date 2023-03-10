@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<!-- Base comp bullet -->
+    <ThingDef Name="BaseRGBBulletWithComps" ParentName="BaseBullet" Abstract="True">
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Thump</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+        </graphicData>
+		<tickerType>Normal</tickerType>
+		<altitudeLayer>VisEffects</altitudeLayer>
+		<drawOffscreen>true</drawOffscreen>
+		<comps>
+			<li Class="VanillaPsycastsExpanded.CompProperties_FleckEmitter">
+				<fleck>RGB_Smoke</fleck>
+				<emissionInterval>1</emissionInterval>
+				<scale>1.5</scale>
+			</li>
+		</comps>
+    </ThingDef>
+	<!-- Normal bullet -->
+    <ThingDef Name="BaseRGBProjectileBullet" ParentName="BaseRGBBulletWithComps" Abstract="True">
+		<thingClass>VFECore.Abilities.AbilityProjectile</thingClass>
+    </ThingDef>
+	<!-- Explosive bullet -->
+	<ThingDef Name="BaseRGBExplosiveBullet" ParentName="BaseRGBBulletWithComps" Abstract="True">
+        <thingClass>Projectile_Explosive</thingClass>
+    </ThingDef>
+	<!-- IMPL -->
+	<!-- Tier 0 -->
+    <ThingDef ParentName="BaseRGBExplosiveBullet">
+        <defName>Bullet_WindBlast</defName>
+        <label>Wind Blast Bullet</label>
+        <projectile>
+            <damageDef>Thump</damageDef>
+            <damageAmountBase>3</damageAmountBase>
+            <explosionRadius>1.9</explosionRadius>
+            <stoppingPower>3</stoppingPower>
+            <speed>25</speed>
+            <soundExplode>ThumpCannon_Impact</soundExplode>
+        </projectile>
+    </ThingDef>
+	<!-- Tier 1 -->
+    <ThingDef ParentName="BaseRGBProjectileBullet">
+        <defName>Bullet_WindSlash_I</defName>
+        <label>Wind Slash Bullet</label>
+        <projectile>
+            <damageDef>Scratch</damageDef>
+            <damageAmountBase>5</damageAmountBase>
+            <stoppingPower>0</stoppingPower>
+            <speed>35</speed>
+        </projectile>
+    </ThingDef>
+	<!-- Tier 2 -->
+	<ThingDef ParentName="BaseRGBProjectileBullet">
+        <defName>Bullet_WindSlash_II</defName>
+        <label>Wind Slash Bullet</label>
+        <projectile>
+            <damageDef>Scratch</damageDef>
+            <damageAmountBase>2</damageAmountBase>
+            <stoppingPower>0.25</stoppingPower>
+            <speed>45</speed>
+        </projectile>
+    </ThingDef>
+	<!-- Tier 3 -->
+	<ThingDef ParentName="BaseRGBProjectileBullet">
+        <defName>Bullet_WindSlash_III</defName>
+        <label>Wind Slash Bullet</label>
+        <projectile>
+            <damageDef>Scratch</damageDef>
+            <damageAmountBase>3</damageAmountBase>
+            <stoppingPower>0.5</stoppingPower>
+            <speed>50</speed>
+        </projectile>
+		<comps>
+			<li Class="VFECore.CompProperties_HomingProjectile">
+				<homingDistanceFractionPassed>0.05</homingDistanceFractionPassed>
+				<homingCorrectionTickRate>5</homingCorrectionTickRate>
+				<initialDispersionFromTarget>3</initialDispersionFromTarget>
+			</li>
+		</comps>
+    </ThingDef>
+</Defs>

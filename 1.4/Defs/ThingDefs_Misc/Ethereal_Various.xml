@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <ThingDef ParentName="EtherealThingBase">
+        <defName>RGB_Massive_Tornado</defName>
+        <label>Massive Rainbow Tornado</label>
+        <thingClass>RGBT.Ethereal.BaseRGBTornado</thingClass>
+        <tickerType>Normal</tickerType>
+        <drawerType>RealtimeOnly</drawerType>
+        <drawOffscreen>true</drawOffscreen>
+        <seeThroughFog>true</seeThroughFog>
+        <alwaysFlee>true</alwaysFlee>
+        <comps>
+            <li Class="CompProperties_WindSource" />
+        </comps>
+    </ThingDef>
+</Defs>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <ThingDef ParentName="AnimalThingBase" Name="RGB_TornadoBase" Abstract="True">
+        <thingClass>RGBT.EtherealPawn.TornadoPawn</thingClass>
+        <statBases>
+            <PsychicSensitivity>0</PsychicSensitivity>
+            <Flammability>0</Flammability>
+            <MeatAmount>0</MeatAmount>
+            <LeatherAmount>0</LeatherAmount>
+            <ArmorRating_Heat>2.00</ArmorRating_Heat>
+        </statBases>
+        <uiIconScale>1.5</uiIconScale>
+        <tradeTags>
+            <li>NonContractable</li>
+        </tradeTags>
+        <race>
+		    <thinkTreeMain>TornadoLike</thinkTreeMain>
+			<thinkTreeConstant>TornadoConstant</thinkTreeConstant>
+			<hasGenders>false</hasGenders>
+            <canBePredatorPrey>false</canBePredatorPrey>
+            <herdMigrationAllowed>false</herdMigrationAllowed>
+            <giveNonToolUserBeatFireVerb>true</giveNonToolUserBeatFireVerb>
+            <canReleaseToWild>false</canReleaseToWild>
+            <trainability>Advanced</trainability>
+            <showTrainables>true</showTrainables>
+			<nameGenerator>NamerAnimalGenericMale</nameGenerator>
+			<nameGeneratorFemale>NamerAnimalGenericFemale</nameGeneratorFemale>
+            <playerCanChangeMaster>false</playerCanChangeMaster>
+            <hideTrainingTab>true</hideTrainingTab>
+            <wildness>0</wildness>
+            <useMeatFrom>Pig</useMeatFrom>
+            <petness>0</petness>
+            <hediffGiverSets Inherit="False" />
+            <needsRest>false</needsRest>
+			<soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+			<deathActionWorkerClass>RGBT.EtherealDAW.DeathActionWorker_Smoke</deathActionWorkerClass>
+        </race>
+    </ThingDef>
+    <!-- Tornado -->
+    <ThingDef ParentName="RGB_TornadoBase">
+        <defName>RGB_Tornado_Pawn</defName>
+        <label>rainbow tornado pawn</label>
+        <description>A pet rainbow tornado do I need to say more.</description>
+        <statBases>
+            <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+            <ComfyTemperatureMax>250</ComfyTemperatureMax>
+            <MarketValue>20</MarketValue>
+            <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+            <MoveSpeed>5</MoveSpeed>
+        </statBases>
+        <tools>
+            <li>
+                <label>body</label>
+                <capacities>
+                    <li>Cut</li>
+                </capacities>
+                <power>12</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>Torso</linkedBodyPartsGroup>
+                <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+            </li>
+        </tools>
+        <comps>
+			<li Class="AnimalBehaviours.CompProperties_InitialHediff">
+				<hediffname>VPE_NoPain</hediffname>
+				<hediffseverity>1</hediffseverity>
+			</li>
+			<li Class="AnimalBehaviours.CompProperties_DiseaseEventImmunity" />
+			<li Class="AnimalBehaviours.CompProperties_DiseaseImmunity">
+				<hediffsToRemove>
+					<li>Animal_Plague</li>
+					<li>Animal_Flu</li>
+					<li>AB_AnimalSporesAllergy</li>
+				</hediffsToRemove>
+				<tickInterval>2000</tickInterval>
+			</li>
+            <li Class="AnimalBehaviours.CompProperties_Draftable">
+                <makeNonFleeingToo>true</makeNonFleeingToo>
+            </li>
+			<li Class="VanillaPsycastsExpanded.CompProperties_BreakLink">
+				<gizmoImage>Effects/WindMage/BreakLink/break_link_tornado</gizmoImage>
+				<gizmoLabel>VPE_BreakLink</gizmoLabel>
+				<gizmoDesc>VPE_BreakLinkDesc</gizmoDesc>
+			</li>
+			<li Class="VanillaPsycastsExpanded.CompProperties_FleckEmitter">
+				<fleck>RGB_Smoke</fleck>
+				<emissionInterval>10</emissionInterval>
+				<scale>0.75</scale>
+			</li>
+        </comps>
+        <race>
+            <bloodDef>Filth_Sand</bloodDef>
+            <body>RGB_Tornado_Body</body>
+            <fleshType>RGB_TornadoFlesh</fleshType>
+            <lifeStageAges>
+                <li>
+                    <minAge>0</minAge>
+                    <def>AnimalAdult</def>
+                    <soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
+                    <soundDeath>Pawn_Mech_Scyther_Death</soundDeath>
+                    <soundCall>Pawn_Mech_Scyther_Call</soundCall>
+                </li>
+            </lifeStageAges>
+            <soundCallIntervalRange>
+                <min>12000</min>
+                <max>20000</max>
+            </soundCallIntervalRange>
+        </race>
+    </ThingDef>
+    <PawnKindDef ParentName="AnimalKindBase">
+        <defName>RGB_Tornado_Pawnkind</defName>
+        <label>rainbow tornado</label>
+        <race>RGB_Tornado_Pawn</race>
+        <combatPower>250</combatPower>
+        <canArriveManhunter>false</canArriveManhunter>
+        <ecoSystemWeight>1</ecoSystemWeight>
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Mote/Smoke</texPath>
+                    <drawSize>2</drawSize>
+                </bodyGraphicData>
+            </li>
+        </lifeStages>
+    </PawnKindDef>
+</Defs>

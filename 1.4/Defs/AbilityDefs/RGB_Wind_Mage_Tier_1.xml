@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+        <defName>WindBlast</defName>
+        <label>Wind Blast</label>
+        <description>A blast of wind.</description>
+        <iconPath>Abilities/WindMage/wind_blast</iconPath>
+        <abilityClass>RGBT.EtherealAbility.Ability_RGB_Projectile</abilityClass>
+        <castTime>60</castTime>
+        <range>18.9</range>
+		<power>2</power>
+		<powerStatFactors>
+			<PsychicSensitivity>1</PsychicSensitivity>
+		</powerStatFactors>
+        <targetMode>Pawn</targetMode>
+		<targetingParameters>
+			<canTargetPawns>true</canTargetPawns>
+			<canTargetBuildings>true</canTargetBuildings>
+		</targetingParameters>
+        <castSound>ThumpCannon_Fire</castSound>
+        <modExtensions>
+            <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+                <path>RGB_Wind_Mage_Psycast</path>
+                <level>1</level>
+                <order>1</order>
+                <psyfocusCost>0.02</psyfocusCost>
+                <entropyGain>12</entropyGain>
+            </li>
+            <li Class="VFECore.Abilities.AbilityExtension_Projectile">
+                <projectile>Bullet_WindBlast</projectile>
+            </li>
+        </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+</Defs>

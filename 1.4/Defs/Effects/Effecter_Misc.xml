@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <EffecterDef>
+        <defName>RainbowVomitEffect</defName>
+        <children>
+            <li>
+                <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+                <scale>0.5~0.7</scale>
+                <ticksBetweenMotes>20</ticksBetweenMotes>
+                <positionLerpFactor>0.35</positionLerpFactor>
+                <positionRadius>0.2</positionRadius>
+                <moteDef>Mote_RainbowVomitBit</moteDef>
+            </li>
+        </children>
+    </EffecterDef>
+</Defs>

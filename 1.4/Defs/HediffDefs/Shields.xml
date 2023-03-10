@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>Omni_Slash_Shield</defName>
+        <label>omni-slash aura</label>
+        <description>An aura of wind, causes constant cutting damage to everything around.</description>
+        <initialSeverity>1</initialSeverity>
+        <hediffClass>RGBT.EtherealOverlay.Hediff_RGBOverlay</hediffClass>
+        <comps>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDowned"/>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDespawn"/>
+            <li Class="VFECore.Shields.HediffCompProperties_DamageAura">
+                <compClass>VFECore.Shields.HediffComp_DamageAura</compClass>
+                <graphic>
+                    <texPath>Things/Mote/Smoke</texPath>
+                    <drawSize>(3, 3)</drawSize>
+					<graphicClass>Graphic_Single</graphicClass>
+                </graphic>
+                <damageDef>Cut</damageDef>
+                <damageAmount>8</damageAmount>
+                <ticksBetween>60</ticksBetween>
+                <radius>1.6</radius>
+                <sustainer>Ambient_AltitudeWind</sustainer>
+                <soundEnded>ThumpCannon_Impact</soundEnded>
+                <hostileOnly>false</hostileOnly>
+            </li>
+        </comps>
+    </HediffDef>
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>Omni_Wall</defName>
+		<label>Omni Wind Wall</label>
+		<description>An omni-directional, circulating wind current capable of blocking projectiles.</description>
+		<hediffClass>RGBT.EtherealOverlay.Hediff_RGBShieldOverlay</hediffClass>
+		<comps>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDowned"/>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDespawn"/>
+		</comps>
+	</HediffDef>
+</Defs>

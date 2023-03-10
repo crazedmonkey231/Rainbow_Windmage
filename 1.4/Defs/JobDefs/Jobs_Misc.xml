@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <JobDef>
+        <defName>RainbowVomitJob</defName>
+        <driverClass>RGBT.EtherealVomit.JobDriver_RainbowVomit</driverClass>
+        <playerInterruptible>false</playerInterruptible>
+        <casualInterruptible>false</casualInterruptible>
+        <reportString>vomiting rainbos.</reportString>
+        <suspendable>false</suspendable>
+    </JobDef>
+</Defs>

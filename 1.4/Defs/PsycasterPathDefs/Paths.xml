@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <VanillaPsycastsExpanded.PsycasterPathDef>
+        <defName>RGB_Wind_Mage_Psycast</defName>
+        <label>Rainbow Wind Mage</label>
+        <description>Gives the caster the ability to manipulate wind with RGB colors.</description>
+        <background>UI/Backgrounds/wind_mage_path</background>
+        <altBackground>UI/Backgrounds/wind_mage_path</altBackground>
+        <tab>CM231 Crazy Psycasts</tab>
+        <tooltip>Gives the caster the ability to manipulate wind with RGB colors.</tooltip>
+    </VanillaPsycastsExpanded.PsycasterPathDef>
+</Defs>

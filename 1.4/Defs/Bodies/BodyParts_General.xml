@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<BodyPartDef>
+		<defName>RGB_Tornado_Head_Def</defName>
+		<label>wimdy head</label>
+		<hitPoints>25</hitPoints>
+		<skinCovered>false</skinCovered>
+		<solid>true</solid>
+		<alive>false</alive>
+		<bleedRate>0</bleedRate>
+		<canSuggestAmputation>false</canSuggestAmputation>
+		<tags>
+			<li>ConsciousnessSource</li>
+			<li>SightSource</li>
+		</tags>
+	</BodyPartDef>
+	<BodyPartDef>
+		<defName>RGB_Tornado_Body_Def</defName>
+		<label>wimdy body</label>
+		<hitPoints>100</hitPoints>
+		<skinCovered>false</skinCovered>
+		<solid>true</solid>
+		<alive>false</alive>
+		<bleedRate>0</bleedRate>
+		<tags>
+			<li>MovingLimbCore</li>
+			<li>ManipulationLimbCore</li>
+		</tags>
+		<frostbiteVulnerability>0.001</frostbiteVulnerability>
+	</BodyPartDef>
+</Defs>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+        <defName>WindSlash_I</defName>
+        <label>Wind Slash I</label>
+        <description>A slash of wind.</description>
+        <iconPath>Abilities/WindMage/wind_slash_1</iconPath>
+        <abilityClass>RGBT.EtherealAbility.Ability_RGB_Projectile</abilityClass>
+        <castTime>55</castTime>
+        <range>20.9</range>
+		<power>3</power>
+		<powerStatFactors>
+			<PsychicSensitivity>1.1</PsychicSensitivity>
+		</powerStatFactors>
+        <targetMode>Pawn</targetMode>
+		<targetingParameters>
+			<canTargetPawns>true</canTargetPawns>
+			<canTargetBuildings>true</canTargetBuildings>
+		</targetingParameters>
+        <castSound>ThumpCannon_Fire</castSound>
+        <modExtensions>
+            <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+                <path>RGB_Wind_Mage_Psycast</path>
+                <level>2</level>
+                <order>1</order>
+                <psyfocusCost>0.025</psyfocusCost>
+                <entropyGain>15</entropyGain>
+				<prerequisites>
+					<li>WindBlast</li>
+				</prerequisites>
+            </li>
+            <li Class="VFECore.Abilities.AbilityExtension_Projectile">
+                <projectile>Bullet_WindSlash_I</projectile>
+            </li>
+        </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+        <defName>Wind_Wall</defName>
+        <label>Rainbow Wall</label>
+        <description>A wall of wind? Rainbows? Who knows it just does a good job of blocking projectiles.</description>
+        <iconPath>Abilities/WindMage/wind_wall</iconPath>
+        <abilityClass>RGBT.EtherealAbility.Ability_RGBWallraise</abilityClass>
+        <castTime>55</castTime>
+        <range>9.9</range>
+        <targetMode>Location</targetMode>
+        <castSound>Explosion_Thump</castSound>
+		<needsTicking>true</needsTicking>
+        <modExtensions>
+            <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+                <path>RGB_Wind_Mage_Psycast</path>
+                <level>2</level>
+                <order>2</order>
+                <psyfocusCost>0.025</psyfocusCost>
+                <entropyGain>15</entropyGain>
+				<prerequisites>
+					<li>WindBlast</li>
+				</prerequisites>
+            </li>
+			<li Class="RGBT.EtherealAbility.AbilityExtension_RGBWallRaise">
+				<wallDef>RGB_RaisedRocks</wallDef>
+				<pattern>
+				  <li>(0, 0)</li>
+				  <li>(1, 0)</li>
+				  <li>(-1, 0)</li>
+				  <li>(0, 1)</li>
+				  <li>(0, -1)</li>
+				</pattern>
+				<screenShakeIntensity>0.25</screenShakeIntensity>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+				<fleckDefs>
+					<li>PsycastSkipInnerExit</li>
+					<li>PsycastSkipOuterRingExit</li>
+				</fleckDefs>
+				<scale>1.5</scale>
+				<sound>Psycast_Skip_Exit</sound>
+				<preCastTicks>10</preCastTicks>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+				<effecterDef>Skip_Exit</effecterDef>
+				<maintainForTicks>60</maintainForTicks>
+				<scale>1.5</scale>
+			</li>
+        </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>RGB_Dirt_Devil</defName>
+		<label>Rainbow Helper Tornado</label>
+		<description>Creates a mini tornado that helps you around the base. Only hauls and can attack things.</description>
+		<iconPath>Abilities/WindMage/wind_helper</iconPath>
+		<abilityClass>RGBT.EtherealAbility.Ability_Summon_DirtDevil</abilityClass>
+		<range>5.9</range>
+		<targetMode>Location</targetMode>
+		<castTime>60</castTime>
+		<needsTicking>true</needsTicking>
+		<showUndrafted>true</showUndrafted>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>RGB_Wind_Mage_Psycast</path>
+				<level>2</level>
+				<order>3</order>
+				<psyfocusCost>0.24</psyfocusCost>
+				<entropyGain>29</entropyGain>
+				<prerequisites>
+					<li>WindBlast</li>
+				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+				<fleckDefs>
+					<li>PsycastSkipInnerExit</li>
+					<li>PsycastSkipOuterRingExit</li>
+				</fleckDefs>
+				<scale>0.5</scale>
+				<sound>Psycast_Skip_Exit</sound>
+				<preCastTicks>10</preCastTicks>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+				<effecterDef>Skip_Exit</effecterDef>
+				<maintainForTicks>60</maintainForTicks>
+				<scale>0.5</scale>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+</Defs>

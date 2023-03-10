@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+        <defName>WindSlash_II</defName>
+        <label>Wind Slash II</label>
+        <description>A slash of wind. Firing 2 projectiles.</description>
+        <iconPath>Abilities/WindMage/wind_slash_2</iconPath>
+        <abilityClass>RGBT.EtherealAbility.Ability_ShootBurstProjectile</abilityClass>
+        <castTime>50</castTime>
+        <range>22.9</range>
+		<power>4</power>
+		<powerStatFactors>
+			<PsychicSensitivity>1.15</PsychicSensitivity>
+		</powerStatFactors>
+        <targetMode>Pawn</targetMode>
+		<targetingParameters>
+			<canTargetPawns>true</canTargetPawns>
+			<canTargetBuildings>true</canTargetBuildings>
+		</targetingParameters>
+        <castSound>ThumpCannon_Fire</castSound>
+        <modExtensions>
+            <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+                <path>RGB_Wind_Mage_Psycast</path>
+                <level>3</level>
+                <order>1</order>
+                <psyfocusCost>0.03</psyfocusCost>
+                <entropyGain>18</entropyGain>
+				<prerequisites>
+					<li>WindSlash_I</li>
+				</prerequisites>
+            </li>
+			<li Class="RGBT.EtherealAbility.AbilityExtension_BurstProjectile">
+				<hasRandomOffset>True</hasRandomOffset>
+                <projectiles>
+					<li>Bullet_WindSlash_II</li>
+					<li>Bullet_WindSlash_II</li>
+				</projectiles>
+            </li>
+        </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+        <defName>Wind_Wall_II_Omni_Wall</defName>
+        <label>Omni-Wall</label>
+        <description>An omni-directional, circulating wind current capable of blocking projectiles.</description>
+        <iconPath>Abilities/WindMage/wind_omni_wall</iconPath>
+        <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+        <castTime>55</castTime>
+		<radius>0.9</radius>
+		<durationTime>1800</durationTime>
+		<targetMode>Self</targetMode>
+        <castSound>Explosion_Thump</castSound>
+		<needsTicking>True</needsTicking>
+        <modExtensions>
+            <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+                <path>RGB_Wind_Mage_Psycast</path>
+                <level>3</level>
+                <order>2</order>
+                <psyfocusCost>0.3</psyfocusCost>
+                <entropyGain>30</entropyGain>
+				<prerequisites>
+					<li>Wind_Wall</li>
+				</prerequisites>
+            </li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>Omni_Wall</hediff>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+				<fleckDefs>
+					<li>PsycastSkipInnerExit</li>
+					<li>PsycastSkipOuterRingExit</li>
+				</fleckDefs>
+				<scale>1</scale>
+				<sound>Psycast_Skip_Exit</sound>
+				<preCastTicks>10</preCastTicks>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+				<effecterDef>Skip_Exit</effecterDef>
+				<maintainForTicks>60</maintainForTicks>
+				<scale>1</scale>
+			</li>
+        </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+        <defName>WindVertigo</defName>
+        <label>Rainbow Vomit</label>
+        <description>Forcefully depressurizes an area around a pawn causing severe vertigo. After the casting stops the pawn inhales a large amount of rainbow wind causing it to mix with their vomit to create rainbow vomit.</description>
+        <iconPath>Abilities/WindMage/rainbow_vomit</iconPath>
+        <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+        <castTime>80</castTime>
+        <range>5.9</range>
+        <targetMode>Pawn</targetMode>
+		<targetingParameters>
+			<canTargetPawns>true</canTargetPawns>
+		</targetingParameters>
+        <castSound>ThumpCannon_Fire</castSound>
+		<needsTicking>True</needsTicking>
+        <modExtensions>
+            <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+                <path>RGB_Wind_Mage_Psycast</path>
+                <level>3</level>
+                <order>3</order>
+                <psyfocusCost>0.2</psyfocusCost>
+                <entropyGain>18</entropyGain>
+				<prerequisites>
+					<li>RGB_Dirt_Devil</li>
+				</prerequisites>
+            </li>
+			<li Class="RGBT.EtherealAbility.AbilityExtension_RGBVomit" />
+			<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+				<fleckDefs>
+					<li>PsycastSkipInnerExit</li>
+					<li>PsycastSkipOuterRingExit</li>
+				</fleckDefs>
+				<scale>1</scale>
+				<sound>Psycast_Skip_Exit</sound>
+				<preCastTicks>10</preCastTicks>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+				<effecterDef>Skip_Exit</effecterDef>
+				<maintainForTicks>60</maintainForTicks>
+				<scale>1</scale>
+			</li>
+        </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+</Defs>

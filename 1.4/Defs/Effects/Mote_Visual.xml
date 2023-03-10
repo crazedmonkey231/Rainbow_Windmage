@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <ThingDef ParentName="FoodBitBase">
+        <defName>Mote_RainbowVomitBit</defName>
+        <graphicData Class="RGBT.EtherealGraphics.RGBGraphicData">
+            <texPath>Things/Mote/RainbowVomitBit</texPath>
+            <shaderType>Mote</shaderType>
+			<graphicClass>RGBT.EtherealGraphics.RGB_Graphic_Mote</graphicClass>
+			<ticksPerFrame>10</ticksPerFrame>
+        </graphicData>
+    </ThingDef>
+</Defs>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <FleckDef ParentName="FleckBase_Thrown">
+        <defName>RGB_Smoke</defName>
+        <graphicData Class="RGBT.EtherealGraphics.RGBGraphicData">
+            <texPath>Things/Mote/Smoke</texPath>
+            <renderInstanced>true</renderInstanced>
+			<graphicClass>RGBT.EtherealGraphics.RGB_Graphic_Fleck</graphicClass>
+			<ticksPerFrame>10</ticksPerFrame>
+			<opacity>0.75</opacity>
+        </graphicData>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <fadeInTime>0.25</fadeInTime>
+		<solidTime>0.1</solidTime>
+		<fadeOutTime>0.1</fadeOutTime>
+		<growthRate>0.005</growthRate>
+    </FleckDef>
+</Defs>

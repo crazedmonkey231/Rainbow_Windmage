@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <BodyDef>
+        <defName>RGB_Tornado_Body</defName>
+        <label>windy tornado</label>
+        <corePart>
+            <def>Torso</def>
+            <height>Middle</height>
+            <depth>Outside</depth>
+            <groups>
+                <li>Torso</li>
+            </groups>
+            <parts>
+                <li>
+                    <def>RGB_Tornado_Head_Def</def>
+                    <coverage>0.1</coverage>
+                    <height>Top</height>
+                </li>
+                <li>
+                    <def>RGB_Tornado_Body_Def</def>
+                    <customLabel>windy body</customLabel>
+                    <coverage>0.8</coverage>
+                </li>
+            </parts>
+        </corePart>
+    </BodyDef>
+</Defs>

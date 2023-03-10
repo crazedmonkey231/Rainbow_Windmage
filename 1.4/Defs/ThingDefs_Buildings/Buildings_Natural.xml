@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <ThingDef ParentName="RockBase" Name="RaisedRocks">
+        <defName>RGB_RaisedRocks</defName>
+        <label>Rainbow rocks</label>
+        <description>A fragile wall made of rubble. It will collapse in time.</description>
+        <graphicData>
+			<shaderType>MoteGlow</shaderType>
+            <color>(255, 255, 255, 75)</color>
+        </graphicData>
+        <tickerType>Normal</tickerType>
+        <scatterableOnMapGen>false</scatterableOnMapGen>
+        <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+        <filthLeaving>Filth_RubbleRock</filthLeaving>
+        <building>
+            <isNaturalRock>false</isNaturalRock>
+            <claimable>false</claimable>
+            <destroySound>ChunkRock_Drop</destroySound>
+        </building>
+        <comps>
+            <li Class="CompProperties_Lifespan">
+                <lifespanTicks>10000</lifespanTicks>
+                <expireEffect>RaisedRock_Collapse</expireEffect>
+            </li>
+			<li Class="VanillaPsycastsExpanded.CompProperties_FleckEmitter">
+				<fleck>RGB_Smoke</fleck>
+				<emissionInterval>25</emissionInterval>
+				<scale>1.5</scale>
+			</li>
+        </comps>
+    </ThingDef>
+</Defs>
